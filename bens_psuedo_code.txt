@@ -1,0 +1,53 @@
+current id = -1
+time out = -1
+priority_queue [all data]
+non-priority_queue []
+arrivalTimeQueue [all customers]
+
+
+all_done = false
+
+Sort Data in priority queue by shortest run time()
+addToQueue() = function that adds item to one of the queues in the right order based on sjr
+
+for current time = 0 and not all done current time ++
+    if currentID > -1
+        if current_time = time_out
+            if hasTimeLeft:
+                if priority of this id is 0 (high)
+                    addToPrpirityQueue() 
+                else 
+                    addToNonPriQueue()
+            currentid = -1
+
+    
+    if current_id == -1
+        if arrivalTimeIsntEmpty:
+        currentId = arrivalTimeQueue.front
+            if first in arrivalTimeQueue.arrival_time >= current_time
+                if (TIME_ALLOWANCE > customers[current_id].slots_remaining)
+                    {
+                        time_out = current_time + customers[current_id].slots_remaining;
+                    }
+                    else
+                    {
+                        time_out = current_time + TIME_ALLOWANCE;
+                    }
+                    customers[current_id].playing_since = current_time;
+                }
+        
+        else if PriorityQueue.isNotEmpty():
+            for item in priorityQueue: 
+                if arrivalTime <= currentTIme:
+                    make this the current customer like above
+                    break
+        
+        else:
+            for item in non-priorityQueue: 
+                if arrivalTime <= currentTIme:
+                    make this the current customer like above
+                    break
+
+        print_state(out_file, current_time, current_id, arrival_events, queue);
+        all_done = (arrival_events.empty() && priorty_queue.empty() && non-priorty_queue.empty() && arrival.empty() && (current_id == -1));
+        
